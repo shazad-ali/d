@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera Script\smoothfollow.cs" />
      <Compile Include="Assets\Scripts\Character Controller\CharMovement.cs" />
+     <Compile Include="Assets\Scripts\Character Controller\objectlife.cs" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Standard Assets\Tessellation Shaders\BumpedSpecularDisplacement.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">

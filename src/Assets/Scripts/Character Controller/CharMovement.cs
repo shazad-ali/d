@@ -20,6 +20,7 @@ public class CharMovement : MonoBehaviour {
 		var controller = GetComponent<CharacterController>();
 	
 		//rotate around y - axis
+		//note: x and z we are not doing anything with...
 		transform.Rotate(0,Input.GetAxis("Horizontal") * rotateSpeed, 0);
 		
 		var forward = transform.TransformDirection(Vector3.forward);
