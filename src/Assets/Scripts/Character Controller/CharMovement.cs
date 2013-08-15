@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CharacterController))]
 public class CharMovement : MonoBehaviour {
 
@@ -11,6 +13,7 @@ public class CharMovement : MonoBehaviour {
 		
 	public float speed = 3.0F;
     public float rotateSpeed = 3.0F;
+	public Transform bullitPrefab;
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,5 +25,15 @@ public class CharMovement : MonoBehaviour {
 		var forward = transform.TransformDirection(Vector3.forward);
 		var curSpeed = speed * Input.GetAxis("Vertical");
 		controller.SimpleMove(forward * curSpeed);
+	
+	    if(Input.GetButtonDown("Jump"))
+		{
+			
+		   var bullit = Instantiate(bullitPrefab,
+				GameObject.Find("spawnpoint").transform.position,
+				Quaternion.identity) as Transform;
+		
+			bullit.rigidbody.AddForce(transform.forward * 2000);
+		}
 	}
 }
